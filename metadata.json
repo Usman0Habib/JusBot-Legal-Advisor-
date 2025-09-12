@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of Gemini Voice AI",
+  "description": "An audio-based conversational AI that listens to your voice, gets a response from Gemini, and speaks back using a realistic voice from ElevenLabs.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

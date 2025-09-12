@@ -1,0 +1,22 @@
+import React from 'react';
+
+// The logo image provided by the user is embedded as a base64 data URL.
+const LOGO_BASE64 = `data:image/png;base64,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`;
+
+interface JusBotLogoProps {
+    className?: string;
+    isAnimated?: boolean;
+}
+
+const JusBotLogo: React.FC<JusBotLogoProps> = ({ className, isAnimated }) => {
+    const animationClass = isAnimated ? 'animate-bubble' : '';
+    return (
+        <img 
+            src={LOGO_BASE64}
+            alt="JusBot Logo"
+            className={`${className || ''} ${animationClass}`}
+        />
+    );
+};
+
+export default JusBotLogo;
