@@ -2,9 +2,9 @@ import { GoogleGenAI, Chat } from "@google/genai";
 
 let ai: GoogleGenAI | null = null;
 try {
-    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 } catch(e) {
-    console.error("Failed to initialize GoogleGenAI. Is the API_KEY set?", e);
+    console.error("Failed to initialize GoogleGenAI. Is the GEMINI_API_KEY set?", e);
 }
 
 /**
