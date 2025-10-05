@@ -55,7 +55,7 @@ const JusBotTextInterface: React.FC<JusBotTextInterfaceProps> = ({ onStartCall, 
             if (!chatRef.current) {
                 throw new Error("Chat session not initialized.");
             }
-            const result = await chatRef.current.sendMessage([{ text: inputValue }]);
+            const result = await chatRef.current.sendMessage({ message: inputValue });
             const botMessage: Message = { id: `${Date.now()}-ai`, sender: 'ai', text: result.text };
             onNewMessage(botMessage);
         } catch (error) {
