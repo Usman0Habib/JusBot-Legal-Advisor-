@@ -44,7 +44,7 @@ const VoiceCallView: React.FC<VoiceCallViewProps> = ({ onClose, messages, chatRe
     onNewMessage({ id: Date.now().toString(), sender: 'user', text: transcript });
 
     try {
-      const result = await chatRef.current.sendMessage({ message: transcript });
+      const result = await chatRef.current.sendMessage(transcript);
       const aiResponseText = result.text;
       onNewMessage({ id: `${Date.now()}-ai`, sender: 'ai', text: aiResponseText });
 
