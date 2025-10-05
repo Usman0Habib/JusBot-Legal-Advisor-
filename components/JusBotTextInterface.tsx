@@ -60,6 +60,8 @@ const JusBotTextInterface: React.FC<JusBotTextInterfaceProps> = ({ onStartCall, 
             onNewMessage(botMessage);
         } catch (error) {
             console.error("Error sending message to Gemini:", error);
+            console.error("Error details:", error instanceof Error ? error.message : String(error));
+            console.error("Error stack:", error instanceof Error ? error.stack : 'No stack trace');
             const errorMessage: Message = { id: `${Date.now()}-error`, sender: 'ai', text: "Sorry, I encountered an error. Please try again." };
             onNewMessage(errorMessage);
         } finally {
